@@ -9,12 +9,21 @@
         "completed": false
     },
     "Item 4": {
-        "completed": false
+        "completed": true
     },
     "sadsa": {
         "completed": false
     },
     "asd": {
+        "completed": false
+    },
+    "asdddd": {
+        "completed": false
+    },
+    "asdasd": {
+        "completed": false
+    },
+    "on": {
         "completed": false
     }
 }

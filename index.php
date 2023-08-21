@@ -28,11 +28,23 @@ if (file_exists('todo.json')) {
     <div>
         <?php foreach ($todos as $todoName => $todo): ?>
             <div>
-                <input type="checkbox" <?php echo $todo->completed ? 'checked' : '' ?> id="todo_<?= $todoName ?>" <label
-                    for="todo_<?= $todoName ?>"><?= $todoName ?></label>
+                <form action="change_status.php" method="POST">
+                    <input type="hidden" name="todo_name" value="<?php echo $todoName; ?>">
+                    <input type="checkbox" <?php echo $todo->completed ? 'checked' : ''; ?>>
+                    <?php echo $todoName; ?>
+                </form>
             </div>
         <?php endforeach; ?>
     </div>
+
+    <script>
+        const checkboxes = document.querySelectorAll('input[type=checkbox]');
+        checkboxes.forEach(ch => {
+            ch.onclick = function () {
+                this.parentNode.submit();
+            }
+        });
+    </script>
 </body>
 
 </html>
