@@ -29,9 +29,13 @@ if (file_exists('todo.json')) {
         <?php foreach ($todos as $todoName => $todo): ?>
             <div>
                 <form action="change_status.php" method="POST">
-                    <input type="hidden" name="todo_name" value="<?php echo $todoName; ?>">
+                    <input type="hidden" name="todo_name" value="<?php echo $todoName ?>">
                     <input type="checkbox" <?php echo $todo->completed ? 'checked' : ''; ?>>
                     <?php echo $todoName; ?>
+                </form>
+                <form action="delete.php" method="POST">
+                    <input type="hidden" name="todo_name" value="<?php echo $todoName ?>">
+                    <button>Delete</button>
                 </form>
             </div>
         <?php endforeach; ?>
